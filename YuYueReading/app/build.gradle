@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.yuyuereading"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    /*configurations {
+        all*.exclude group: 'com.google.code.gson', module: 'gson'
+        all*.exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+        all*.exclude group: 'com.squareup.okio', module: 'okio'
+        all*.exclude group: 'io.reactivex', module: 'rxjava'
+        all*.exclude group: 'io.reactivex', module: 'rxandroid'
+    }*/
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.alibaba:fastjson:1.2.31'
+    implementation 'com.ycl.tabview.library:tabviewlibrary:1.0'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    implementation 'cn.yipianfengye.android:zxing-library:2.2'
+    implementation 'com.github.ome450901:SimpleRatingBar:1.4.1'
+    implementation 'com.github.sendtion:XRichText:1.1'
+    implementation 'com.amap.api:search:5.7.0'
+    implementation 'com.amap.api:map2d:5.2.0'
+    implementation 'com.amap.api:location:3.8.0'
+    implementation 'com.amap.api:location:3.8.0'
+    implementation('com.squareup.okhttp3:okhttp:3.9.1', {
+        exclude module: "okio"
+    })
+    implementation 'com.jhworks.library:ImageSelect:1.1.1'
+    implementation 'com.contrarywind:Android-PickerView:4.1.3'
+    implementation 'com.qianwen:update-app:3.5.1'
+    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
+    implementation 'cn.bmob.android:bmob-sdk:3.6.3'
+    //bmob-push：Bmob的推送包
+    //implementation 'cn.bmob.android:bmob-push:0.8'
+
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    implementation 'cn.bmob.android:http-legacy:1.0'
+}

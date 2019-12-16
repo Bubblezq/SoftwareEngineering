@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ddd"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+     <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+            <Button
+                android:id="@+id/reading_return_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@mipmap/returnbutton"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/verticalline" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已读记录"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+        </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ddd">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="10dp"
+            android:background="#fff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="评分"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <com.willy.ratingbar.ScaleRatingBar
+                    android:id="@+id/bookRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:srb_clearRatingEnabled="true"
+                    app:srb_clickable="true"
+                    app:srb_drawableEmpty="@mipmap/star_empty"
+                    app:srb_drawableFilled="@mipmap/star_full"
+                    app:srb_isIndicator="false"
+                    app:srb_numStars="5"
+                    app:srb_rating="0"
+                    app:srb_scrollable="true"
+                    app:srb_starHeight="50dp"
+                    app:srb_starPadding="0dp"
+                    app:srb_starWidth="50dp"
+                    app:srb_stepSize="0.1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center_vertical"
+                        android:text="@string/NoteText"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        tools:ignore="RtlHardcoded" />
+
+                    <EditText
+                        android:id="@+id/reading_note_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:hint="请输入内容"
+                        android:background="@null"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:inputType="textMultiLine"
+                        tools:ignore="LabelFor" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center_vertical"
+                        android:text="@string/reason"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        tools:ignore="RtlHardcoded" />
+
+                    <EditText
+                        android:id="@+id/reading_reason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:hint="请输入内容"
+                        android:background="@null"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:inputType="textMultiLine"
+                        tools:ignore="LabelFor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:gravity="right|center_vertical"
+                        android:text="方式："
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        tools:ignore="RtlHardcoded" />
+
+                    <Spinner
+                        android:id="@+id/reading_way"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:entries="@array/readway" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:gravity="right|center_vertical"
+                        android:text="位置："
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        tools:ignore="RtlHardcoded" />
+
+                    <TextView
+                        android:id="@+id/reading_adress_textview"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:singleLine="false"
+                        android:gravity="center_vertical"
+                        android:hint="选择读书地点" />
+
+                    <Button
+                        android:id="@+id/reading_adress_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/adress" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:gravity="right|center_vertical"
+                        android:text="分类："
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="16sp"
+                        tools:ignore="RtlHardcoded" />
+
+                    <TextView
+                        android:id="@+id/reading_classfy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:hint="点击选择图书分类" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/reading_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#3ccf1b"
+                    android:text="完成记录"
+                    android:textColor="#fff"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </ScrollView>
+    </LinearLayout>
