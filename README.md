@@ -1,2 +1,2 @@
-# 愉阅
+愉阅
 a reading record APP
